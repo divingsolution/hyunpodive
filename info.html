@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주변정보 | 울릉현포다이브</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",sans-serif;
+background:#f7fbff;
+color:#102033;
+line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+
+:root{
+--blue:#0b74c9;
+--navy:#0a2540;
+--sky:#eaf6ff;
+--gray:#667085;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.9);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(0,0,0,.05);
+z-index:99;
+}
+
+.logo{
+font-weight:900;
+font-size:20px;
+color:var(--navy);
+}
+
+nav{
+display:flex;
+gap:24px;
+font-weight:700;
+}
+
+.hero{
+padding:150px 6% 100px;
+text-align:center;
+background:linear-gradient(180deg,#fff,#eaf6ff);
+}
+
+.hero small{
+color:var(--blue);
+font-weight:900;
+letter-spacing:.1em;
+}
+
+.hero h1{
+font-size:clamp(50px,8vw,100px);
+line-height:.95;
+letter-spacing:-4px;
+margin:15px 0 25px;
+color:var(--navy);
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:20px;
+color:#475467;
+}
+
+section{
+padding:90px 6%;
+}
+
+.section-title{
+margin-bottom:40px;
+}
+
+.section-title h2{
+font-size:48px;
+letter-spacing:-2px;
+color:var(--navy);
+}
+
+.section-title p{
+color:var(--gray);
+margin-top:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 15px 45px rgba(0,0,0,.06);
+}
+
+.card h3{
+font-size:26px;
+margin-bottom:12px;
+color:var(--navy);
+}
+
+.card p{
+color:var(--gray);
+}
+
+.highlight{
+background:linear-gradient(135deg,#0b74c9,#0a2540);
+color:white;
+}
+
+.highlight h3,
+.highlight p{
+color:white;
+}
+
+.timeline{
+display:grid;
+gap:20px;
+}
+
+.step{
+background:white;
+padding:28px;
+border-radius:24px;
+box-shadow:0 10px 35px rgba(0,0,0,.05);
+}
+
+.step strong{
+display:block;
+font-size:22px;
+margin-bottom:8px;
+color:var(--blue);
+}
+
+.cta{
+margin:80px 6%;
+padding:70px;
+border-radius:40px;
+text-align:center;
+background:linear-gradient(135deg,#0a2540,#0b74c9);
+color:white;
+}
+
+.cta h2{
+font-size:clamp(40px,6vw,72px);
+line-height:1;
+margin-bottom:15px;
+}
+
+.cta p{
+font-size:18px;
+margin-bottom:25px;
+color:#eaf6ff;
+}
+
+.btn{
+display:inline-block;
+padding:16px 24px;
+background:white;
+color:var(--navy);
+border-radius:999px;
+font-weight:900;
+}
+
+footer{
+padding:50px 6%;
+border-top:1px solid rgba(0,0,0,.08);
+background:white;
+text-align:center;
+color:var(--gray);
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.section-title h2{
+font-size:36px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">울릉현포다이브</div>
+
+<nav>
+<a href="resort.html">리조트 소개</a>
+<a href="sites.html">다이빙사이트</a>
+<a href="price.html">비용</a>
+<a href="info.html">주변정보</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<small>LOCAL GUIDE</small>
+
+<h1>Travel<br>Ulleungdo</h1>
+
+<p>
+울릉도 다이빙을 더욱 편하게 즐기기 위한
+현포항 주변 정보와 여행 팁을 소개합니다.
+</p>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>현포항 주변</h2>
+<p>다이빙 전후 자주 찾는 장소들</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>편의점</h3>
+<p>
+간단한 음료와 간식 구매 가능.
+출항 전 필요한 물품을 준비하세요.
+</p>
+</div>
+
+<div class="card">
+<h3>마트</h3>
+<p>
+장기 체류 시 필요한 생필품을 구매할 수 있습니다.
+</p>
+</div>
+
+<div class="card">
+<h3>주유소</h3>
+<p>
+렌터카 이용 시 미리 위치를 확인하는 것을 추천합니다.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>맛집 & 카페</h2>
+<p>현포다이브가 추천하는 울릉도 먹거리</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>따개비 칼국수</h3>
+<p>
+울릉도 대표 음식 중 하나.
+처음 방문했다면 꼭 추천.
+</p>
+</div>
+
+<div class="card">
+<h3>오징어 요리</h3>
+<p>
+울릉도 특산물인 오징어를 활용한 다양한 메뉴.
+</p>
+</div>
+
+<div class="card">
+<h3>오션뷰 카페</h3>
+<p>
+다이빙 후 여유롭게 바다를 바라보며 휴식.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>추천 관광지</h2>
+<p>다이빙 외에도 즐길 수 있는 울릉도</p>
+</div>
+
+<div class="grid">
+
+<div class="card highlight">
+<h3>관음도</h3>
+<p>
+울릉도를 대표하는 절경.
+사진 촬영 명소.
+</p>
+</div>
+
+<div class="card">
+<h3>내수전 전망대</h3>
+<p>
+일출 명소로 유명한 전망대.
+</p>
+</div>
+
+<div class="card">
+<h3>행남해안산책로</h3>
+<p>
+울릉도의 아름다운 해안 절경을 즐길 수 있습니다.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>배편 이용 팁</h2>
+<p>처음 울릉도를 방문하는 분들을 위한 안내</p>
+</div>
+
+<div class="timeline">
+
+<div class="step">
+<strong>01</strong>
+배편은 기상 상황에 따라 변동될 수 있습니다.
+</div>
+
+<div class="step">
+<strong>02</strong>
+신분증 또는 여권을 반드시 지참하세요.
+</div>
+
+<div class="step">
+<strong>03</strong>
+멀미가 있다면 승선 전 멀미약 복용을 추천합니다.
+</div>
+
+<div class="step">
+<strong>04</strong>
+성수기에는 배편 예약을 미리 진행하는 것이 좋습니다.
+</div>
+
+</div>
+
+</section>
+
+<div class="cta">
+
+<h2>Need Help?</h2>
+
+<p>
+배편, 숙박, 렌터카, 다이빙 일정까지
+편하게 문의하세요.
+</p>
+
+<a href="tel:054-791-0208" class="btn">
+054-791-0208
+</a>
+
+</div>
+
+<footer>
+
+울릉현포다이브 · HYUNPO DIVE RESORT
+
+</footer>
+
+</body>
+</html>
