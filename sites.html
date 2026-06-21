@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>다이빙사이트 | 울릉현포다이브</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;
+      color:#102033;
+      background:#f7fbff;
+      line-height:1.6;
+    }
+    a { color:inherit; text-decoration:none; }
+    img { width:100%; display:block; object-fit:cover; }
+
+    :root {
+      --blue:#0b74c9;
+      --navy:#0a2540;
+      --sky:#eaf6ff;
+      --mint:#42d3c8;
+      --gray:#667085;
+      --white:#fff;
+    }
+
+    header {
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      z-index:50;
+      padding:18px 6%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(10,37,64,.08);
+    }
+
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+    }
+
+    .logo-mark {
+      width:42px; height:42px;
+      border-radius:50%;
+      background:var(--navy);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+    }
+
+    nav { display:flex; gap:28px; font-size:15px; font-weight:800; color:#344054; }
+
+    .nav-btn {
+      padding:11px 18px;
+      border-radius:999px;
+      background:var(--navy);
+      color:white;
+      font-weight:900;
+    }
+
+    .hero {
+      padding:150px 6% 90px;
+      min-height:82vh;
+      display:grid;
+      grid-template-columns:1fr .9fr;
+      gap:56px;
+      align-items:center;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(66,211,200,.22), transparent 36%),
+        linear-gradient(180deg,#ffffff 0%,#eaf6ff 100%);
+    }
+
+    .eyebrow {
+      display:inline-flex;
+      padding:9px 15px;
+      border-radius:999px;
+      background:white;
+      border:1px solid rgba(11,116,201,.16);
+      color:var(--blue);
+      font-weight:900;
+      margin-bottom:22px;
+      box-shadow:0 10px 30px rgba(11,116,201,.08);
+    }
+
+    h1 {
+      font-size:clamp(54px,8vw,104px);
+      line-height:.95;
+      letter-spacing:-5px;
+      color:var(--navy);
+      margin-bottom:28px;
+    }
+
+    .hero p {
+      font-size:20px;
+      color:#475467;
+      max-width:650px;
+      margin-bottom:32px;
+    }
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px 24px;
+      border-radius:999px;
+      font-weight:900;
+      border:1px solid rgba(10,37,64,.12);
+      background:white;
+    }
+
+    .btn.primary {
+      background:var(--blue);
+      color:white;
+      border-color:var(--blue);
+      box-shadow:0 16px 35px rgba(11,116,201,.25);
+    }
+
+    .hero-image {
+      height:560px;
+      border-radius:42px;
+      overflow:hidden;
+      box-shadow:0 30px 80px rgba(10,37,64,.2);
+    }
+
+    .hero-image img { height:100%; }
+
+    .quick {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      padding:0 6% 80px;
+      margin-top:-30px;
+    }
+
+    .quick-card {
+      background:white;
+      border-radius:26px;
+      padding:28px;
+      box-shadow:0 14px 40px rgba(10,37,64,.07);
+    }
+
+    .quick-card strong {
+      display:block;
+      color:var(--navy);
+      font-size:30px;
+      margin-bottom:6px;
+    }
+
+    .quick-card span {
+      color:var(--gray);
+      font-weight:700;
+    }
+
+    section { padding:95px 6%; }
+
+    .section-head {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:40px;
+      margin-bottom:44px;
+    }
+
+    .section-head small {
+      color:var(--blue);
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .section-head h2 {
+      font-size:clamp(36px,5vw,68px);
+      line-height:1.05;
+      letter-spacing:-2.5px;
+      color:var(--navy);
+      margin-top:12px;
+    }
+
+    .section-head p {
+      max-width:500px;
+      color:var(--gray);
+      font-size:17px;
+    }
+
+    .site-list {
+      display:grid;
+      gap:28px;
+    }
+
+    .site-block {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      background:white;
+      border-radius:38px;
+      overflow:hidden;
+      box-shadow:0 22px 60px rgba(10,37,64,.08);
+      border:1px solid rgba(10,37,64,.06);
+    }
+
+    .site-block:nth-child(even) .site-photo { order:2; }
+
+    .site-photo {
+      min-height:460px;
+      background:#dbeafe;
+    }
+
+    .site-photo img { height:100%; }
+
+    .site-text {
+      padding:48px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .site-number {
+      color:var(--blue);
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .site-text h3 {
+      font-size:42px;
+      color:var(--navy);
+      letter-spacing:-1.5px;
+      margin-bottom:16px;
+    }
+
+    .site-text p {
+      color:#475467;
+      font-size:17px;
+      margin-bottom:26px;
+    }
+
+    .meta-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .meta {
+      background:var(--sky);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .meta small {
+      display:block;
+      color:#667085;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+
+    .meta strong {
+      color:#184e77;
+      font-size:16px;
+    }
+
+    .notice {
+      margin-top:50px;
+      background:linear-gradient(135deg,#0b74c9,#0a2540);
+      color:white;
+      border-radius:34px;
+      padding:46px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .notice h2 {
+      font-size:42px;
+      line-height:1.1;
+      letter-spacing:-1.5px;
+    }
+
+    .notice p {
+      color:#eaf6ff;
+      font-size:17px;
+    }
+
+    .map-section {
+      background:white;
+    }
+
+    .map-grid {
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .map-info {
+      background:#f7fbff;
+      border-radius:34px;
+      padding:42px;
+      box-shadow:0 14px 40px rgba(10,37,64,.06);
+    }
+
+    .map-info h3 {
+      font-size:36px;
+      color:var(--navy);
+      margin-bottom:18px;
+      letter-spacing:-1px;
+    }
+
+    .map-info p {
+      color:#475467;
+      margin-bottom:24px;
+    }
+
+    .map-visual {
+      min-height:460px;
+      border-radius:34px;
+      background:
+        linear-gradient(rgba(10,37,64,.05),rgba(10,37,64,.15)),
+        url("images/resort01.jpg") center/cover no-repeat;
+      box-shadow:0 18px 50px rgba(10,37,64,.1);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .pin {
+      position:absolute;
+      padding:8px 13px;
+      border-radius:999px;
+      background:white;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:900;
+      box-shadow:0 10px 30px rgba(10,37,64,.14);
+    }
+
+    .pin.one { left:18%; top:32%; }
+    .pin.two { left:48%; top:23%; }
+    .pin.three { left:62%; top:55%; }
+    .pin.four { left:30%; top:68%; }
+
+    .cta {
+      margin:90px 6%;
+      padding:80px 40px;
+      border-radius:42px;
+      text-align:center;
+      color:white;
+      background:
+        linear-gradient(135deg,rgba(10,37,64,.92),rgba(11,116,201,.74)),
+        url("images/underwater02.jpg") center/cover no-repeat;
+      box-shadow:0 28px 70px rgba(10,37,64,.22);
+    }
+
+    .cta h2 {
+      font-size:clamp(42px,6vw,76px);
+      line-height:1;
+      letter-spacing:-3px;
+      margin-bottom:18px;
+    }
+
+    .cta p {
+      color:#eaf6ff;
+      font-size:18px;
+      margin-bottom:26px;
+    }
+
+    footer {
+      padding:50px 6%;
+      background:white;
+      border-top:1px solid rgba(10,37,64,.08);
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:30px;
+      color:#667085;
+    }
+
+    footer strong {
+      color:var(--navy);
+      font-size:22px;
+    }
+
+    @media (max-width: 980px) {
+      nav { display:none; }
+      .hero {
+        grid-template-columns:1fr;
+        padding-top:120px;
+      }
+      h1 { letter-spacing:-3px; }
+      .hero-image { height:420px; }
+      .quick {
+        grid-template-columns:1fr;
+        margin-top:0;
+      }
+      .section-head {
+        display:block;
+      }
+      .section-head p {
+        margin-top:18px;
+      }
+      .site-block,
+      .map-grid,
+      .notice,
+      footer {
+        grid-template-columns:1fr;
+      }
+      .site-block:nth-child(even) .site-photo { order:0; }
+      .site-text { padding:34px; }
+      .site-text h3 { font-size:34px; }
+      .meta-grid { grid-template-columns:1fr; }
+      .site-photo { min-height:320px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <div class="logo-mark">潛</div>
+    <div>
+      울릉현포다이브<br>
+      <span style="font-size:12px;color:#667085;font-weight:700;">HYUNPO DIVE RESORT</span>
+    </div>
+  </a>
+
+  <nav>
+    <a href="index.html#resort">리조트 소개</a>
+    <a href="sites.html">다이빙사이트</a>
+    <a href="index.html#price">비용</a>
+    <a href="index.html#info">주변정보</a>
+    <a href="index.html#location">오시는 길</a>
+    <a href="index.html#gallery">갤러리</a>
+  </nav>
+
+  <a class="nav-btn" href="tel:054-791-0208">예약 문의</a>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">ULLEUNGDO DIVE SITES</div>
+      <h1>Sites<br>of<br>Ulleungdo.</h1>
+      <p>
+        울릉도의 다이빙은 단순한 수중 관광이 아닙니다.
+        화산섬이 만든 암반 지형, 계절마다 변하는 모자반 숲,
+        동해 특유의 맑은 빛을 만나는 경험입니다.
+      </p>
+      <a class="btn primary" href="#site-list">포인트 둘러보기</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/underwater01.jpg" alt="울릉도 수중 지형">
+    </div>
+  </section>
+
+  <div class="quick">
+    <div class="quick-card"><strong>암반</strong><span>화산섬이 만든 입체 지형</span></div>
+    <div class="quick-card"><strong>모자반</strong><span>계절에 따라 달라지는 숲</span></div>
+    <div class="quick-card"><strong>생태</strong><span>동해 어종과 수중 생물</span></div>
+    <div class="quick-card"><strong>시야</strong><span>맑은 날의 청량한 수중빛</span></div>
+  </div>
+
+  <section id="site-list">
+    <div class="section-head">
+      <div>
+        <small>Dive Point Guide</small>
+        <h2>현포를 기준으로 만나는<br>울릉도의 대표 포인트</h2>
+      </div>
+      <p>
+        아래 내용은 페이지 시안용 기본 구성입니다.
+        실제 포인트명, 수심, 난이도, 시즌 정보에 맞춰 언제든 수정할 수 있습니다.
+      </p>
+    </div>
+
+    <div class="site-list">
+
+      <article class="site-block">
+        <div class="site-photo">
+          <img src="images/underwater01.jpg" alt="모자반 숲">
+        </div>
+        <div class="site-text">
+          <div class="site-number">POINT 01</div>
+          <h3>모자반 숲</h3>
+          <p>
+            봄 시즌 울릉도를 대표하는 장면입니다.
+            바닥에서부터 솟아오른 모자반 사이로 다이버가 지나가며,
+            얕은 수심에서도 울릉도 특유의 수중 분위기를 강하게 느낄 수 있습니다.
+          </p>
+          <div class="meta-grid">
+            <div class="meta"><small>난이도</small><strong>초급~중급</strong></div>
+            <div class="meta"><small>수심</small><strong>5m ~ 18m</strong></div>
+            <div class="meta"><small>추천</small><strong>와이드 촬영</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="site-block">
+        <div class="site-photo">
+          <img src="images/underwater02.jpg" alt="암반 캐년">
+        </div>
+        <div class="site-text">
+          <div class="site-number">POINT 02</div>
+          <h3>암반 캐년</h3>
+          <p>
+            울릉도는 화산섬답게 수중 지형이 입체적입니다.
+            큰 암반과 협곡형 지형이 이어져 중성부력과 팀워크를 유지하며
+            이동하는 재미가 있는 포인트입니다.
+          </p>
+          <div class="meta-grid">
+            <div class="meta"><small>난이도</small><strong>중급</strong></div>
+            <div class="meta"><small>수심</small><strong>10m ~ 25m</strong></div>
+            <div class="meta"><small>추천</small><strong>어드밴스 이상</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="site-block">
+        <div class="site-photo">
+          <img src="images/underwater03.jpg" alt="수중 생태">
+        </div>
+        <div class="site-text">
+          <div class="site-number">POINT 03</div>
+          <h3>수중 생태</h3>
+          <p>
+            동해의 차갑고 맑은 물에서 만나는 어종과 군집을 관찰할 수 있습니다.
+            얕은 수심에서 여유롭게 진행되는 다이빙에 적합하며,
+            리프레시 다이버에게도 좋은 선택입니다.
+          </p>
+          <div class="meta-grid">
+            <div class="meta"><small>난이도</small><strong>초급</strong></div>
+            <div class="meta"><small>수심</small><strong>6m ~ 16m</strong></div>
+            <div class="meta"><small>추천</small><strong>펀다이빙</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="site-block">
+        <div class="site-photo">
+          <img src="images/diver.jpg" alt="체크 다이빙">
+        </div>
+        <div class="site-text">
+          <div class="site-number">POINT 04</div>
+          <h3>체크 다이빙</h3>
+          <p>
+            울릉도 첫 다이빙은 컨디션 확인이 중요합니다.
+            장비 상태, 웨이트, 부력, 팀 호흡을 확인한 뒤
+            이후 포인트를 안전하게 진행할 수 있도록 준비합니다.
+          </p>
+          <div class="meta-grid">
+            <div class="meta"><small>난이도</small><strong>초급</strong></div>
+            <div class="meta"><small>수심</small><strong>5m ~ 15m</strong></div>
+            <div class="meta"><small>추천</small><strong>첫날 다이빙</strong></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="notice">
+      <h2>포인트는 바다가 정합니다.</h2>
+      <p>
+        울릉도 다이빙은 날씨, 파도, 조류, 참가자의 레벨에 따라 포인트가 달라질 수 있습니다.
+        현포다이브센터는 당일 해황과 팀 수준을 기준으로 가장 안전하고 만족도 높은 포인트를 선택합니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="section-head">
+      <div>
+        <small>Point Map</small>
+        <h2>현포항을 중심으로<br>움직이는 다이빙 동선</h2>
+      </div>
+      <p>
+        실제 지도 이미지를 추가하면 이 영역은 울릉도 포인트 맵으로 확장할 수 있습니다.
+        지금은 임시 이미지 기반의 시안입니다.
+      </p>
+    </div>
+
+    <div class="map-grid">
+      <div class="map-info">
+        <h3>현포항 베이스</h3>
+        <p>
+          리조트에서 장비를 준비하고 현포항에서 출항합니다.
+          보트 동선이 짧고, 다이빙 후 복귀와 휴식이 편한 것이 현포다이브의 장점입니다.
+        </p>
+        <a class="btn primary" href="tel:054-791-0208">포인트 문의하기</a>
+      </div>
+
+      <div class="map-visual">
+        <div class="pin one">현포항</div>
+        <div class="pin two">모자반</div>
+        <div class="pin three">암반지형</div>
+        <div class="pin four">체크다이빙</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Which site<br>fits your level?</h2>
+    <p>레벨과 경험, 장비 상태에 맞는 울릉도 다이빙 포인트를 안내해드립니다.</p>
+    <a class="btn primary" href="tel:054-791-0208">054-791-0208 예약 문의</a>
+  </div>
+
+</main>
+
+<footer>
+  <div>
+    <strong>울릉현포다이브</strong>
+    <p>HYUNPO DIVE RESORT</p>
+  </div>
+  <div>
+    <p>경상북도 울릉군 현포항 인근</p>
+    <p>054-791-0208</p>
+  </div>
+  <div>
+    <p>© 2026 Hyunpo Dive Resort.</p>
+    <p>All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
