@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>비용 안내 | 울릉현포다이브</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;background:#f7fbff;color:#102033;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    :root{--blue:#0b74c9;--navy:#0a2540;--sky:#eaf6ff;--gray:#667085}
+    header{position:fixed;top:0;left:0;width:100%;z-index:50;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(10,37,64,.08)}
+    .logo{display:flex;gap:12px;align-items:center;font-weight:900}
+    .logo-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center}
+    nav{display:flex;gap:28px;font-size:15px;font-weight:800;color:#344054}
+    .nav-btn{padding:11px 18px;border-radius:999px;background:var(--navy);color:white;font-weight:900}
+    .hero{padding:155px 6% 90px;text-align:center;background:linear-gradient(180deg,#fff 0%,#eaf6ff 100%)}
+    .eyebrow{display:inline-flex;padding:9px 15px;border-radius:999px;background:white;border:1px solid rgba(11,116,201,.16);color:var(--blue);font-weight:900;margin-bottom:22px}
+    h1{font-size:clamp(48px,8vw,104px);line-height:.95;letter-spacing:-4px;color:var(--navy);margin-bottom:26px}
+    .hero p{max-width:760px;margin:0 auto;color:#475467;font-size:20px}
+    section{padding:90px 6%}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:42px}
+    .section-head small{color:var(--blue);font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .section-head h2{font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-2.5px;color:var(--navy);margin-top:12px}
+    .section-head p{max-width:500px;color:var(--gray);font-size:17px}
+    .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .card{background:white;border-radius:32px;padding:34px;box-shadow:0 18px 50px rgba(10,37,64,.08);border:1px solid rgba(10,37,64,.06)}
+    .card.highlight{background:linear-gradient(135deg,#0b74c9,#0a2540);color:white;transform:translateY(-10px)}
+    .card small{color:var(--blue);font-weight:900}
+    .card.highlight small{color:#8ee8df}
+    .card h3{font-size:27px;color:var(--navy);margin:10px 0 12px;letter-spacing:-1px}
+    .card.highlight h3{color:white}
+    .desc{color:#667085;margin-bottom:22px}
+    .card.highlight .desc{color:#dbeafe}
+    .price{font-size:38px;font-weight:900;color:var(--blue);margin-bottom:22px}
+    .card.highlight .price{color:white}
+    ul{list-style:none;display:grid;gap:12px}
+    li{color:#475467}
+    .card.highlight li{color:#eaf6ff}
+    .notice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .notice{background:white;border-radius:30px;padding:34px;box-shadow:0 16px 45px rgba(10,37,64,.07)}
+    .notice h3{color:var(--navy);font-size:26px;margin-bottom:14px}
+    .notice p{color:#667085}
+    .cta{margin:90px 6%;padding:76px 40px;border-radius:42px;text-align:center;color:white;background:linear-gradient(135deg,#0a2540,#0b74c9);box-shadow:0 28px 70px rgba(10,37,64,.22)}
+    .cta h2{font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-3px;margin-bottom:18px}
+    .cta p{color:#eaf6ff;font-size:18px;margin-bottom:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;border-radius:999px;font-weight:900;background:white;color:var(--navy)}
+    footer{padding:50px 6%;background:white;border-top:1px solid rgba(10,37,64,.08);display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;color:#667085}
+    footer strong{color:var(--navy);font-size:22px}
+    @media(max-width:1100px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:980px){nav{display:none}.section-head{display:block}.section-head p{margin-top:18px}.price-grid,.notice-grid,footer{grid-template-columns:1fr}.card.highlight{transform:none}}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <div class="logo-mark">潛</div>
+    <div>
+      울릉현포다이브<br>
+      <span style="font-size:12px;color:#667085;font-weight:700;">HYUNPO DIVE RESORT</span>
+    </div>
+  </a>
+
+  <nav>
+    <a href="resort.html">리조트 소개</a>
+    <a href="sites.html">다이빙사이트</a>
+    <a href="price.html">비용</a>
+    <a href="info.html">주변정보</a>
+    <a href="location.html">오시는 길</a>
+    <a href="gallery.html">갤러리</a>
+  </nav>
+
+  <a class="nav-btn" href="tel:054-791-0208">예약 문의</a>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="eyebrow">PRICE GUIDE</div>
+  <h1>Clear<br>Price Guide.</h1>
+  <p>
+    울릉도 현포항에서 진행되는 다이빙 비용 안내입니다.
+    해황, 인원, 장비 렌탈, 숙박 여부에 따라 세부 구성은 달라질 수 있습니다.
+  </p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div>
+      <small>Diving Price</small>
+      <h2>다이빙 비용</h2>
+    </div>
+    <p>가장 많이 문의하는 프로그램을 기준으로 보기 쉽게 정리했습니다.</p>
+  </div>
+
+  <div class="price-grid">
+    <div class="card">
+      <small>BOAT DIVING</small>
+      <h3>2회 보트다이빙</h3>
+      <p class="desc">울릉도 대표 포인트를 보트로 이동해 진행하는 기본 펀다이빙.</p>
+      <div class="price">130,000원</div>
+      <ul>
+        <li>• 2회 다이빙 기준</li>
+        <li>• 보트 이용</li>
+        <li>• 포인트 브리핑</li>
+        <li>• 해황에 따라 포인트 변경</li>
+      </ul>
+    </div>
+
+    <div class="card highlight">
+      <small>DISCOVER SCUBA</small>
+      <h3>체험다이빙</h3>
+      <p class="desc">처음 바다를 경험하는 분들을 위한 프로그램.</p>
+      <div class="price">120,000원</div>
+      <ul>
+        <li>• 장비 일체 포함</li>
+        <li>• 사전 안전 브리핑</li>
+        <li>• 강사 동행 진행</li>
+        <li>• 초보자 가능</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <small>FREEDIVING</small>
+      <h3>프리다이빙</h3>
+      <p class="desc">울릉도 바다에서 진행하는 프리다이빙 세션.</p>
+      <div class="price">60,000원</div>
+      <ul>
+        <li>• 1세션 기준</li>
+        <li>• 현장 브리핑</li>
+        <li>• 해황 기준 진행</li>
+        <li>• 개인 장비 권장</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <small>GUIDE SERVICE</small>
+      <h3>전담 가이드</h3>
+      <p class="desc">울릉도 포인트를 잘 아는 가이드와 함께하는 진행.</p>
+      <div class="price">100,000원</div>
+      <ul>
+        <li>• 수중 가이드</li>
+        <li>• 포인트 안내</li>
+        <li>• 안전 브리핑</li>
+        <li>• 팀 레벨 맞춤 진행</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div>
+      <small>Extra</small>
+      <h2>추가 안내</h2>
+    </div>
+    <p>숙박, 장비 렌탈, 교육 과정은 일정과 인원에 따라 별도 안내됩니다.</p>
+  </div>
+
+  <div class="notice-grid">
+    <div class="notice">
+      <h3>숙박</h3>
+      <p>현포다이브센터 숙박은 일정과 객실 상황에 따라 별도 문의 바랍니다.</p>
+    </div>
+
+    <div class="notice">
+      <h3>장비 렌탈</h3>
+      <p>BCD, 호흡기, 슈트, 핀, 마스크 등 렌탈 필요 시 사전 문의가 필요합니다.</p>
+    </div>
+
+    <div class="notice">
+      <h3>해황 안내</h3>
+      <p>울릉도는 날씨와 파도에 따라 출항, 포인트, 일정이 변경될 수 있습니다.</p>
+    </div>
+
+    <div class="notice">
+      <h3>다이버 레벨</h3>
+      <p>자격, 경험, 마지막 다이빙 날짜, 컨디션에 따라 포인트가 조정될 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Ask before<br>you book.</h2>
+  <p>일정, 인원, 숙박, 장비 렌탈 여부를 알려주시면 가장 알맞은 구성을 안내드립니다.</p>
+  <a class="btn" href="tel:054-791-0208">054-791-0208 예약 문의</a>
+</div>
+
+</main>
+
+<footer>
+  <div>
+    <strong>울릉현포다이브</strong>
+    <p>HYUNPO DIVE RESORT</p>
+  </div>
+  <div>
+    <p>경상북도 울릉군 현포항 인근</p>
+    <p>054-791-0208</p>
+  </div>
+  <div>
+    <p>© 2026 Hyunpo Dive Resort.</p>
+    <p>All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
