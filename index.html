@@ -27,8 +27,19 @@ nav a:hover{color:var(--red)}
 .btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn{padding:15px 24px;border-radius:999px;font-weight:900;background:#111;color:white}
 .btn.red{background:var(--red)}
-.hero-img{height:560px;border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.18);background:#ddd}
-.hero-img img{height:100%}
+.hero-img{
+  height:560px;
+  border-radius:34px;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.18);
+  background:#ddd;
+}
+
+.hero-img video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
 .quick{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#ddd}
 .quick a{background:white;padding:34px 20px;text-align:center}
@@ -160,9 +171,11 @@ nav{display:none}
     </div>
   </div>
 
-  <div class="hero-img">
-    <img src="image/boat.jpg" alt="현포다이브 보트">
-  </div>
+ <div class="hero-img">
+  <video autoplay muted loop playsinline>
+    <source src="image/boat-1.mp4" type="video/mp4">
+  </video>
+</div>
 </section>
 
 <div class="quick">
