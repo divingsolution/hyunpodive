@@ -1,97 +1,138 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>울릉현포다이브 | Ulleung Hyunpo Dive</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>울릉현포다이브</title>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;color:#102033;background:#f7fbff;line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    img{width:100%;display:block;object-fit:cover}
-    :root{--blue:#0b74c9;--navy:#0a2540;--sky:#eaf6ff;--gray:#667085}
-    header{position:fixed;top:0;left:0;width:100%;z-index:50;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(10,37,64,.08)}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:900}
-    .logo-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center}
-    nav{display:flex;gap:26px;font-size:15px;font-weight:800;color:#344054}
-    .nav-btn{padding:11px 18px;border-radius:999px;background:var(--navy);color:white;font-weight:900}
-    .hero{min-height:100vh;padding:150px 6% 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;background:radial-gradient(circle at 80% 20%,rgba(66,211,200,.25),transparent 35%),linear-gradient(180deg,#fff 0%,#eaf6ff 100%)}
-    .eyebrow{display:inline-flex;padding:9px 15px;border-radius:999px;background:white;border:1px solid rgba(11,116,201,.16);color:var(--blue);font-weight:900;margin-bottom:22px;box-shadow:0 10px 30px rgba(11,116,201,.08)}
-    h1{font-size:clamp(54px,8vw,112px);line-height:.92;letter-spacing:-5px;color:var(--navy);margin-bottom:26px}
-    .hero p{font-size:20px;color:#475467;max-width:640px;margin-bottom:32px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;border-radius:999px;font-weight:900;border:1px solid rgba(10,37,64,.12);background:white}
-    .btn.primary{background:var(--blue);color:white;border-color:var(--blue);box-shadow:0 16px 35px rgba(11,116,201,.25)}
-    .hero-visual{position:relative}
-    .hero-main{height:620px;border-radius:42px;overflow:hidden;box-shadow:0 30px 80px rgba(10,37,64,.22);background:#dbeafe}
-    .hero-main img{height:100%}
-    .floating-card{position:absolute;left:-32px;bottom:36px;background:white;border-radius:24px;padding:22px;width:280px;box-shadow:0 20px 60px rgba(10,37,64,.18)}
-    .floating-card strong{display:block;font-size:34px;color:var(--blue);line-height:1}
-    .floating-card span{color:var(--gray);font-weight:700}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0 6% 80px;margin-top:-20px}
-    .stat{background:white;padding:28px;border-radius:24px;box-shadow:0 14px 40px rgba(10,37,64,.07)}
-    .stat strong{display:block;font-size:32px;color:var(--navy);letter-spacing:-1px}
-    .stat span{color:var(--gray);font-weight:700}
-    section{padding:95px 6%}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:42px}
-    .section-head small{color:var(--blue);font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-    .section-head h2{font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-2.5px;color:var(--navy);margin-top:12px}
-    .section-head p{max-width:500px;color:var(--gray);font-size:17px}
-    .link-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
-    .link-card{background:white;border-radius:30px;padding:32px;box-shadow:0 18px 50px rgba(10,37,64,.08);border:1px solid rgba(10,37,64,.06);transition:.25s}
-    .link-card:hover{transform:translateY(-6px)}
-    .link-card small{color:var(--blue);font-weight:900}
-    .link-card h3{font-size:25px;color:var(--navy);margin:10px 0 12px;letter-spacing:-1px}
-    .link-card p{color:#667085;margin-bottom:18px}
-    .arrow{font-weight:900;color:var(--blue)}
-    .preview{background:white}
-    .resort-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-    .image-card{border-radius:32px;overflow:hidden;box-shadow:0 18px 50px rgba(10,37,64,.08);background:#dbeafe}
-    .image-card img{height:100%;min-height:440px}
-    .info-card{background:#f7fbff;border-radius:32px;padding:42px;box-shadow:0 18px 50px rgba(10,37,64,.06)}
-    .info-card h3{font-size:36px;line-height:1.12;letter-spacing:-1.5px;color:var(--navy);margin-bottom:18px}
-    .info-card p{color:#667085;margin-bottom:24px}
-    .site-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .site-card{position:relative;min-height:400px;border-radius:30px;overflow:hidden;color:white;background:#0a2540;box-shadow:0 20px 50px rgba(10,37,64,.16)}
-    .site-card img{height:100%;position:absolute;inset:0;opacity:.9}
-    .site-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.78))}
-    .site-content{position:absolute;z-index:2;left:24px;right:24px;bottom:24px}
-    .site-content small{font-weight:900;opacity:.9}
-    .site-content h3{font-size:27px;margin:8px 0 10px;letter-spacing:-1px}
-    .site-content p{font-size:14px;color:#eef6ff}
-    .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .price-card{background:white;border-radius:30px;padding:30px;box-shadow:0 18px 50px rgba(10,37,64,.08)}
-    .price-card h3{font-size:24px;color:var(--navy);margin-bottom:10px}
-    .price-card .price{font-size:32px;font-weight:900;color:var(--blue);margin:16px 0}
-    .price-card p{color:#667085}
-    .instagram{background:linear-gradient(135deg,#fff,#eaf6ff)}
-    .insta-box{border-radius:42px;padding:70px 40px;text-align:center;background:white;box-shadow:0 22px 60px rgba(10,37,64,.08)}
-    .insta-box h2{font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:-3px;color:var(--navy);margin-bottom:18px}
-    .insta-box p{max-width:680px;margin:0 auto 28px;color:#667085;font-size:18px}
-    .cta{margin:90px 6%;padding:80px 40px;border-radius:42px;text-align:center;color:white;background:linear-gradient(135deg,rgba(10,37,64,.92),rgba(11,116,201,.78)),url("images/underwater01.jpg") center/cover no-repeat;box-shadow:0 28px 70px rgba(10,37,64,.22)}
-    .cta h2{font-size:clamp(42px,6vw,80px);line-height:1;letter-spacing:-3px;margin-bottom:18px}
-    .cta p{color:#eaf6ff;font-size:18px;margin-bottom:26px}
-    footer{padding:50px 6%;background:white;border-top:1px solid rgba(10,37,64,.08);display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;color:#667085}
-    footer strong{color:var(--navy);font-size:22px}
-    @media(max-width:1100px){.link-grid,.price-grid{grid-template-columns:repeat(2,1fr)}.site-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:980px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:120px}h1{letter-spacing:-3px}.hero-main{height:430px}.floating-card{position:static;width:100%;margin-top:18px}.stats,.link-grid,.site-grid,.price-grid,footer{grid-template-columns:1fr}.resort-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:18px}.image-card img{min-height:320px}}
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;color:#111;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block;object-fit:cover}
+:root{--red:#d71920;--black:#111;--gray:#666;--light:#f7f7f7}
+
+header{position:fixed;top:0;left:0;width:100%;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:18px 6%;border-bottom:1px solid #eee}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px}
+.logo img{width:62px;height:62px;border-radius:50%}
+.logo span b{color:var(--red)}
+nav{display:flex;gap:28px;font-weight:800}
+nav a:hover{color:var(--red)}
+.nav-btn{background:var(--red);color:white;padding:12px 18px;border-radius:999px;font-weight:900}
+
+.hero{min-height:100vh;padding:150px 6% 80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;background:linear-gradient(180deg,#fff,#f4fbff)}
+.hero h1{font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:-4px;margin-bottom:24px}
+.hero h1 b{color:var(--red)}
+.hero p{font-size:20px;color:#555;max-width:620px;margin-bottom:30px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 24px;border-radius:999px;font-weight:900;background:#111;color:white}
+.btn.red{background:var(--red)}
+.hero-img{height:560px;border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.18);background:#ddd}
+.hero-img img{height:100%}
+
+.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#ddd}
+.quick a{background:white;padding:34px 20px;text-align:center}
+.quick .icon{font-size:34px;margin-bottom:12px}
+.quick h3{font-size:20px;margin-bottom:8px}
+.quick p{font-size:14px;color:#666}
+
+section{padding:90px 6%}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:42px}
+.section-head small{color:var(--red);font-weight:900}
+.section-head h2{font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-2px}
+.section-head p{max-width:520px;color:#666}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.intro h2{font-size:46px;line-height:1.15;margin-bottom:22px}
+.intro h2 b{color:var(--red)}
+.intro p{color:#555;margin-bottom:26px}
+.intro-img{height:430px;border-radius:28px;overflow:hidden;background:#ddd}
+.intro-img img{height:100%}
+
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:white;border:1px solid #eee;border-radius:26px;padding:30px;box-shadow:0 15px 45px rgba(0,0,0,.06)}
+.card h3{font-size:23px;margin-bottom:12px}
+.price{font-size:32px;font-weight:900;color:var(--red);margin:16px 0}
+.card p{color:#666}
+
+.insta{background:#111;color:white;text-align:center;border-radius:38px;padding:70px 30px}
+.insta h2{font-size:clamp(38px,6vw,72px);line-height:1;margin-bottom:18px}
+.insta p{color:#ddd;margin-bottom:28px}
+
+.cta{margin:80px 6%;padding:70px 30px;text-align:center;border-radius:38px;background:linear-gradient(135deg,#d71920,#111);color:white}
+.cta h2{font-size:clamp(40px,6vw,76px);line-height:1;margin-bottom:18px}
+.cta p{color:#fff;margin-bottom:24px}
+
+footer{background:#f7f7f7;padding:50px 6%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;color:#555}
+footer strong{display:block;color:#111;font-size:22px;margin-bottom:10px}
+footer img{width:76px;border-radius:50%;margin-bottom:12px}
+
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;display:flex;align-items:center;justify-content:center}
+.popup-box{width:90%;max-width:520px;background:white;border-radius:28px;padding:38px;text-align:center;position:relative;box-shadow:0 30px 90px rgba(0,0,0,.3)}
+.popup-close{position:absolute;right:18px;top:14px;border:0;background:none;font-size:28px;cursor:pointer}
+.popup-box h2{font-size:34px;color:var(--red);margin-bottom:12px}
+.popup-box p{color:#555;margin-bottom:26px}
+.popup-items{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:22px 0;margin-bottom:24px}
+.popup-item strong{display:block;color:#111;margin-bottom:5px}
+.popup-item span{font-size:14px;color:#666}
+.popup-bottom{background:var(--red);color:white;margin:28px -38px -38px;padding:18px;border-radius:0 0 28px 28px}
+.popup-bottom label{cursor:pointer;font-weight:800}
+
+@media(max-width:980px){
+nav{display:none}
+.hero,.intro{grid-template-columns:1fr}
+.hero-img{height:380px}
+.quick{grid-template-columns:repeat(2,1fr)}
+.price-grid,footer{grid-template-columns:1fr}
+.section-head{display:block}
+.section-head p{margin-top:16px}
+.popup-items{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
+<div id="popup" class="popup-overlay">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <h2>2026 시즌 예약 진행중!</h2>
+    <p>체험다이빙 · 프리다이빙 · 보트다이빙</p>
+
+    <div class="popup-items">
+      <div class="popup-item">
+        <strong>사전예약 필수</strong>
+        <span>울릉도 일정 확인</span>
+      </div>
+      <div class="popup-item">
+        <strong>소수정예</strong>
+        <span>안전한 다이빙</span>
+      </div>
+      <div class="popup-item">
+        <strong>문의</strong>
+        <span>010-5466-3370</span>
+      </div>
+    </div>
+
+    <a class="btn red" href="tel:010-5466-3370">전화 문의하기</a>
+
+    <div class="popup-bottom">
+      <label>
+        오늘 하루 보지 않기
+        <input type="checkbox" onclick="hideToday()">
+      </label>
+    </div>
+  </div>
+</div>
+
 <header>
   <a class="logo" href="index.html">
-    <div class="logo-mark">潛</div>
-    <div>
-      울릉현포다이브<br>
-      <span style="font-size:12px;color:#667085;font-weight:700;">HYUNPO DIVE RESORT</span>
-    </div>
+    <img src="images/logo.jpg" alt="울릉현포다이브 로고">
+    <span>울릉<b>현포</b>다이브</span>
   </a>
 
   <nav>
+    <a href="index.html">HOME</a>
     <a href="resort.html">리조트 소개</a>
     <a href="sites.html">다이빙사이트</a>
     <a href="price.html">비용안내</a>
@@ -100,82 +141,54 @@
     <a href="https://www.instagram.com/hyeonpo_dive/" target="_blank">오늘의 바다</a>
   </nav>
 
-  <a class="nav-btn" href="tel:054-791-0208">예약 문의</a>
+  <a class="nav-btn" href="tel:010-5466-3370">예약 문의</a>
 </header>
 
 <main>
 
 <section class="hero">
   <div>
-    <div class="eyebrow">ULLEUNGDO · HYUNPO PORT</div>
-    <h1>Ulleungdo<br>Dive Resort.</h1>
+    <h1>울릉도의 바다를<br><b>현포</b>에서 만나다</h1>
     <p>
       울릉도 현포항에서 시작하는 다이빙 여행.
       리조트, 보트다이빙, 체험다이빙, 프리다이빙까지
       한 곳에서 편하게 준비하세요.
     </p>
-    <div class="hero-actions">
-      <a class="btn primary" href="resort.html">리조트 소개 보기</a>
+    <div class="btns">
+      <a class="btn red" href="resort.html">리조트 소개</a>
       <a class="btn" href="sites.html">다이빙사이트 보기</a>
     </div>
   </div>
 
-  <div class="hero-visual">
-    <div class="hero-main">
-      <img src="images/boat.jpg" alt="울릉현포다이브 보트">
-    </div>
-    <div class="floating-card">
-      <strong>현포항</strong>
-      <span>울릉도 북서쪽 다이빙 베이스</span>
-    </div>
+  <div class="hero-img">
+    <img src="images/boat.jpg" alt="현포다이브 보트">
   </div>
 </section>
 
-<div class="stats">
-  <div class="stat"><strong>Resort</strong><span>숙박과 다이빙을 한 곳에서</span></div>
-  <div class="stat"><strong>Boat</strong><span>현포항 기준 보트 다이빙</span></div>
-  <div class="stat"><strong>Sites</strong><span>울릉도 지형 포인트</span></div>
-  <div class="stat"><strong>Local</strong><span>현지 운영 기반 안내</span></div>
+<div class="quick">
+  <a href="resort.html"><div class="icon">🏠</div><h3>리조트 소개</h3><p>숙박과 다이빙을 한 곳에서</p></a>
+  <a href="sites.html"><div class="icon">🤿</div><h3>다이빙사이트</h3><p>울릉도 수중 포인트</p></a>
+  <a href="price.html"><div class="icon">₩</div><h3>비용안내</h3><p>프로그램별 가격</p></a>
+  <a href="info.html"><div class="icon">⛰️</div><h3>주변정보</h3><p>관광과 맛집 안내</p></a>
+  <a href="location.html"><div class="icon">📍</div><h3>오시는 길</h3><p>현포항 이동 안내</p></a>
+  <a href="https://www.instagram.com/hyeonpo_dive/" target="_blank"><div class="icon">📸</div><h3>오늘의 바다</h3><p>인스타에서 실시간 확인</p></a>
 </div>
 
 <section>
-  <div class="section-head">
+  <div class="intro">
     <div>
-      <small>Main Menu</small>
-      <h2>필요한 정보를<br>빠르게 확인하세요</h2>
-    </div>
-    <p>현포다이브센터 이용 전 가장 많이 확인하는 정보를 페이지별로 정리했습니다.</p>
-  </div>
-
-  <div class="link-grid">
-    <a class="link-card" href="resort.html"><small>01</small><h3>리조트 소개</h3><p>숙박, 휴식, 장비 준비, 보트 출항 동선을 확인하세요.</p><div class="arrow">자세히 보기 →</div></a>
-    <a class="link-card" href="sites.html"><small>02</small><h3>다이빙사이트</h3><p>모자반 숲, 암반 지형, 체크다이빙 포인트를 소개합니다.</p><div class="arrow">사이트 보기 →</div></a>
-    <a class="link-card" href="price.html"><small>03</small><h3>비용안내</h3><p>보트다이빙, 체험다이빙, 프리다이빙, 가이드 비용.</p><div class="arrow">비용 보기 →</div></a>
-    <a class="link-card" href="info.html"><small>04</small><h3>주변정보</h3><p>식당, 카페, 관광지, 배편 이용 팁을 확인하세요.</p><div class="arrow">정보 보기 →</div></a>
-    <a class="link-card" href="location.html"><small>05</small><h3>오시는 길</h3><p>울릉도 입도 후 현포항 이동과 집결 정보를 안내합니다.</p><div class="arrow">위치 보기 →</div></a>
-  </div>
-</section>
-
-<section class="preview">
-  <div class="section-head">
-    <div>
-      <small>Resort</small>
-      <h2>다이빙을 위해<br>설계된 공간</h2>
-    </div>
-    <p>현포다이브는 단순 숙소가 아니라 다이버의 하루 동선을 기준으로 준비된 공간입니다.</p>
-  </div>
-
-  <div class="resort-grid">
-    <div class="image-card">
-      <img src="images/resort01.jpg" alt="현포다이브 리조트">
-    </div>
-    <div class="info-card">
-      <h3>숙박 · 장비 · 출항 · 휴식</h3>
+      <small style="color:#d71920;font-weight:900;">HYUNPO DIVE</small>
+      <h2>울릉현포다이브에<br>오신 것을 환영합니다</h2>
       <p>
-        장비를 준비하고, 브리핑을 듣고, 보트에 오르고,
-        다이빙 후 세척과 휴식까지 한 곳에서 이어집니다.
+        경상북도 울릉군 북면 울릉순환로 2625,
+        현포항을 기반으로 운영되는 울릉현포다이브입니다.
+        안전하고 편안한 울릉도 다이빙을 안내합니다.
       </p>
-      <a class="btn primary" href="resort.html">리조트 자세히 보기</a>
+      <a class="btn red" href="resort.html">더 알아보기</a>
+    </div>
+
+    <div class="intro-img">
+      <img src="images/underwater01.jpg" alt="울릉도 수중">
     </div>
   </div>
 </section>
@@ -183,76 +196,75 @@
 <section>
   <div class="section-head">
     <div>
-      <small>Dive Sites</small>
-      <h2>울릉도의 바다는<br>지형으로 기억됩니다</h2>
-    </div>
-    <p>계절마다 달라지는 모자반 숲과 울릉도 특유의 암반 지형을 경험하세요.</p>
-  </div>
-
-  <div class="site-grid">
-    <div class="site-card"><img src="images/underwater01.jpg" alt="모자반 숲"><div class="site-content"><small>POINT 01</small><h3>모자반 숲</h3><p>계절에 따라 달라지는 울릉도 대표 수중 풍경.</p></div></div>
-    <div class="site-card"><img src="images/underwater02.jpg" alt="암반 캐년"><div class="site-content"><small>POINT 02</small><h3>암반 캐년</h3><p>화산섬이 만든 입체적인 수중 지형.</p></div></div>
-    <div class="site-card"><img src="images/underwater03.jpg" alt="수중 생태"><div class="site-content"><small>POINT 03</small><h3>수중 생태</h3><p>동해의 맑은 물과 어종을 만나는 펀다이빙.</p></div></div>
-    <div class="site-card"><img src="images/diver.jpg" alt="체크 다이빙"><div class="site-content"><small>POINT 04</small><h3>체크 다이빙</h3><p>울릉도 첫 다이빙 전 컨디션 확인.</p></div></div>
-  </div>
-
-  <br><br>
-  <a class="btn primary" href="sites.html">다이빙사이트 전체 보기</a>
-</section>
-
-<section>
-  <div class="section-head">
-    <div>
-      <small>Price</small>
+      <small>PRICE</small>
       <h2>주요 비용 안내</h2>
     </div>
-    <p>가장 많이 문의하는 프로그램의 기본 비용입니다. 상세 조건은 비용안내 페이지에서 확인하세요.</p>
+    <p>자세한 조건은 비용안내 페이지에서 확인하세요.</p>
   </div>
 
   <div class="price-grid">
-    <div class="price-card"><h3>2회 보트다이빙</h3><div class="price">130,000원</div><p>울릉도 대표 포인트 펀다이빙.</p></div>
-    <div class="price-card"><h3>체험다이빙</h3><div class="price">120,000원</div><p>처음 바다를 경험하는 분들을 위한 프로그램.</p></div>
-    <div class="price-card"><h3>프리다이빙</h3><div class="price">60,000원</div><p>1세션 기준 프리다이빙 진행.</p></div>
-    <div class="price-card"><h3>전담 가이드</h3><div class="price">100,000원</div><p>팀 레벨에 맞춘 수중 가이드.</p></div>
+    <div class="card"><h3>2회 보트다이빙</h3><div class="price">130,000원</div><p>울릉도 대표 포인트 펀다이빙.</p></div>
+    <div class="card"><h3>체험다이빙</h3><div class="price">120,000원</div><p>처음 바다를 경험하는 분들을 위한 프로그램.</p></div>
+    <div class="card"><h3>프리다이빙</h3><div class="price">60,000원</div><p>1세션 기준 프리다이빙.</p></div>
+    <div class="card"><h3>전담 가이드</h3><div class="price">100,000원</div><p>팀 레벨에 맞춘 수중 가이드.</p></div>
   </div>
-
-  <br><br>
-  <a class="btn primary" href="price.html">비용 자세히 보기</a>
 </section>
 
-<section class="instagram">
-  <div class="insta-box">
-    <h2>Today’s Ocean<br>on Instagram</h2>
-    <p>
-      오늘의 시야, 모자반 상태, 대풍감·코끼리바위 해황,
-      교육 및 펀다이빙 현장 사진은 인스타그램에서 가장 빠르게 확인할 수 있습니다.
-    </p>
-    <a class="btn primary" href="https://www.instagram.com/hyeonpo_dive/" target="_blank">@hyeonpo_dive</a>
+<section>
+  <div class="insta">
+    <h2>오늘의 바다는<br>인스타그램에서</h2>
+    <p>시야, 모자반 상태, 다이빙 현장 사진은 인스타그램에서 가장 빠르게 확인하세요.</p>
+    <a class="btn red" href="https://www.instagram.com/hyeonpo_dive/" target="_blank">@hyeonpo_dive</a>
   </div>
 </section>
 
 <div class="cta">
-  <h2>Ready for<br>Ulleungdo?</h2>
-  <p>일정, 인원, 숙박, 장비 렌탈 여부를 알려주시면 가장 알맞은 구성을 안내드립니다.</p>
-  <a class="btn primary" href="tel:054-791-0208">054-791-0208 예약 문의</a>
+  <h2>Ready for Ulleungdo?</h2>
+  <p>일정, 인원, 숙박, 장비 렌탈 여부를 알려주시면 알맞은 구성을 안내드립니다.</p>
+  <a class="btn" href="tel:010-5466-3370">010-5466-3370 예약 문의</a>
 </div>
 
 </main>
 
 <footer>
   <div>
+    <img src="images/logo.jpg" alt="울릉현포다이브 로고">
     <strong>울릉현포다이브</strong>
     <p>HYUNPO DIVE RESORT</p>
   </div>
+
   <div>
-    <p>경상북도 울릉군 현포항 인근</p>
-    <p>054-791-0208</p>
+    <strong>연락처</strong>
+    <p>010-5466-3370</p>
+    <p>@hyeonpo_dive</p>
   </div>
+
   <div>
-    <p>© 2026 Hyunpo Dive Resort.</p>
-    <p>All rights reserved.</p>
+    <strong>주소</strong>
+    <p>경상북도 울릉군 북면 울릉순환로 2625</p>
+    <p>울릉현포다이브 (현포리 708-33)</p>
   </div>
 </footer>
+
+<script>
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+
+function hideToday(){
+  const tomorrow = new Date();
+  tomorrow.setHours(24,0,0,0);
+  localStorage.setItem("hidePopupUntil", tomorrow.getTime());
+  closePopup();
+}
+
+window.onload = function(){
+  const hideUntil = localStorage.getItem("hidePopupUntil");
+  if(hideUntil && new Date().getTime() < hideUntil){
+    document.getElementById("popup").style.display="none";
+  }
+}
+</script>
 
 </body>
 </html>
